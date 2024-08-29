@@ -6,6 +6,7 @@ import { createClient } from '@/utils/supabase/server'
 
 export async function GET( request ){
     const {searchParams} = new URL(request.nextUrl)
+    console.log(searchParams)
     const token_hash = searchParams.get('token_hash')
     const type = searchParams.get('type')
     const next = searchParams.get('next') ?? '/'

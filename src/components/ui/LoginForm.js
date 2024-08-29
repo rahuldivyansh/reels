@@ -2,11 +2,13 @@
 import { useState } from "react";
 import { signin } from "@/utils/auth";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export default function LoginForm() {
       setError(result.error);
     } else {
       alert("Login Successful");
-      redirect("/"); // Redirect to home page
+      router.push("/");
     }
   };
   return (
