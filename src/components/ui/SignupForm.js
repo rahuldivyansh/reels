@@ -2,11 +2,13 @@
 'use client'
 import React, { useState } from 'react';
 import { signUpNewUser } from '@/utils/auth'; // Import your function
+import { useRouter } from 'next/navigation';
 
 export default function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -18,6 +20,7 @@ export default function SignupForm() {
     } else {
       alert('Email Confirmation Sent!. Kindly check your email to confirm your account');
       // Redirect or perform additional actions
+      router.push('/auth/login');
     }
   };
 
