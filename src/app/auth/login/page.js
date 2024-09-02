@@ -10,7 +10,7 @@ export default function LoginPage() {
       <input id="password" name="password" type="password" required />
       <button formAction={login}>Log in</button>
       <br />
-      <p>Don't have an account ?</p>
+      <p>Don&apos;t have an account ?</p>
       <Link href="/auth/signup">Sign up</Link>
     </form>
   )
